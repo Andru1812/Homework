@@ -1,7 +1,6 @@
 my_dict = {'Andrey': 'student', 'Maxim': 'teacher', 'Anton': 'programmer'}
 print(my_dict)
-my_dict['Sergey'] = 'cabbie'
-print(my_dict['Maxim'], my_dict['Sergey'])
+print(my_dict.get('Maxim'), my_dict.get('Sergey'))
 my_dict.update({'Denis': 'security', 'Artem': 'cashier'})
 print(my_dict.pop('Maxim'))
 print(my_dict)
