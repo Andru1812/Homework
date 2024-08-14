@@ -1,7 +1,10 @@
 def send_email(massage, recipient, sender = 'university.help@gmail.com'):
-    if (recipient.count('@') != 1 and sender.count('@') != 1) and (recipient[-4:-1] != '.com' or recipient[-4:-1] != '.net' or recipient[-3:-1] != '.ru') and (sender[-4:-1] != '.com' or sender[-4:-1] != '.net' or sender[-3:-1] != '.ru'):
+    x1 = recipient.count('@') != 1 or sender.count('@') != 1
+    x2 = not (recipient.endswith('.com') or recipient.endswith('.net') or recipient.endswith('.ru'))
+    x3 = not (sender.endswith('.com') or sender.endswith('.net') or sender.endswith('.ru'))
+    if x1 or x2 or x3:
         print("Невозможно отправить письмо(", massage, ")с адреса", sender, "на адрес", recipient)
-    if recipient == sender:
+    elif recipient == sender:
         print("Нельзя отправить письмо(", massage, ")самому себе!")
     elif sender == 'university.help@gmail.com':
         print("Письмо(", massage, ")успешно отправлено с адреса", sender, "на адрес", recipient)
