@@ -7,8 +7,11 @@ def get_multiplied_digits(number):
     else:
         return int(number)
 
+
 set_number = input('Введите число')
-while not set_number.isdigit():
+while not set_number.isdigit() and set_number != '':
     set_number = input('Введите число заново')
+
+set_number = set_number.replace('0', '')
 
 print(get_multiplied_digits(set_number))
